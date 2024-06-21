@@ -109,23 +109,43 @@ const NavBar = () => {
     <>
       <div className="h-screen flex flex-col justify-between">
         <div>
-          <div className="flex items-center w-full justify-center py-6 pr-4">
-            <Link
-              to="/dashboard"
-              className="flex items-center w-full justify-center cursor-pointer"
-              style={{
-                color: "inherit", // Inherit color from parent
-              }}>
-              <div className="flex justify-center items-center text-center text-lg text-color2 font-tajawal font-bold">
-                <div className="">ثانوية نينوى للمتميزات</div>
-              </div>
-              <img
-                className="w-16 h-auto my-3 ml-4"
-                src={require("../../assets/Logo.png")}
-                alt=""
-              />
-            </Link>
-          </div>
+          {user?.role === "admin" ? (
+            <div className="flex items-center w-full justify-center py-6 pr-4">
+              <Link
+                to="/teachers"
+                className="flex items-center w-full justify-center cursor-pointer"
+                style={{
+                  color: "inherit", // Inherit color from parent
+                }}>
+                <div className="flex justify-center items-center text-center text-lg text-color2 font-tajawal font-bold">
+                  <div className="">ثانوية نينوى للمتميزات</div>
+                </div>
+                <img
+                  className="w-16 h-auto my-3 ml-4"
+                  src={require("../../assets/Logo.png")}
+                  alt=""
+                />
+              </Link>
+            </div>
+          ) : (
+            <div className="flex items-center w-full justify-center py-6 pr-4">
+              <Link
+                to="/profile"
+                className="flex items-center w-full justify-center cursor-pointer"
+                style={{
+                  color: "inherit", // Inherit color from parent
+                }}>
+                <div className="flex justify-center items-center text-center text-lg text-color2 font-tajawal font-bold">
+                  <div className="">ثانوية نينوى للمتميزات</div>
+                </div>
+                <img
+                  className="w-16 h-auto my-3 ml-4"
+                  src={require("../../assets/Logo.png")}
+                  alt=""
+                />
+              </Link>
+            </div>
+          )}
           <div className="">
             {navigation.map((item, index) => (
               <Link
@@ -346,8 +366,6 @@ const MobileNavBar = () => {
           <Menu
             style={{ width: "100%" }}
             mode="inline"
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1"]}
             items={items2}
             className="rtl-menu pr-24 rounded-none no-blue-selection"
           />
