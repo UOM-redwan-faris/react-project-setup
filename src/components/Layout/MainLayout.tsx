@@ -33,12 +33,12 @@ const NavBar = () => {
   const navigation: NavBarItem[] = [
     checkAccess({ allowedRoles: ["TEACHER"] }) && {
       name: "الصفحة الشخصية",
-      to: "/teacher-profile",
+      to: "/profile",
       icon: <Face3Icon style={{ fontSize: 24 }} />,
     },
     checkAccess({ allowedRoles: ["ADMIN"] }) && {
       name: "الصفحة الرئيسية",
-      to: "/dashboard",
+      to: "/teachers",
       icon: <DashboardIcon style={{ fontSize: 24 }} />,
     },
     checkAccess({ allowedRoles: ["ADMIN"] }) && {
@@ -87,7 +87,7 @@ const NavBar = () => {
           label: (
             <div
               className="flex justify-center items-center w-full h-full text-lg text-color2"
-              onClick={() => navigate("/")}>
+              onClick={() => navigate("/profile")}>
               الملف الشخصي
             </div>
           ),

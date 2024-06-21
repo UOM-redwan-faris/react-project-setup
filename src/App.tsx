@@ -1,5 +1,5 @@
 import "./App.css";
-import { MainLayout } from "./components/elements/MainLayout";
+import { MainLayout } from "./components/Layout/MainLayout";
 import { AppProvider } from "./providers/app";
 import { AppRoutes } from "./routes";
 
