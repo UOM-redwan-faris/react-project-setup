@@ -1,7 +1,7 @@
 import { axios } from "../../../lib/axios";
 export type LoginCredentialsDTO = {
-  password: string;
   phoneNumber: string;
+  password: string;
 };
 
 export const loginWithEmailAndPassword = (data: LoginCredentialsDTO) => {

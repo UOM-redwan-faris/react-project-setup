@@ -18,10 +18,7 @@ export const Layout = ({ children }: LayoutProps) => {
             />
           </div>
           <div className="flex flex-col items-center justify-center h-full">
-            <div className="w-full flex flex-col justify-end pr-40 items-end">
-              <div className="font-inter font-bold">تسجيل الدخول</div>
-              {children}
-            </div>
+            {children}
           </div>
         </div>
         <div

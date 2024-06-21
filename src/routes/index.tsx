@@ -13,12 +13,12 @@ export const AppRoutes = () => {
     console.log(user);
 
     switch (user?.role) {
-      case "admin":
-        routes = protectedAdminRoutes;
-        break;
-      case "teacher":
-        routes = protectedTeacherRoutes;
-        break;
+      // case "admin":
+      //   routes = protectedAdminRoutes;
+      //   break;
+      // case "teacher":
+      //   routes = protectedTeacherRoutes;
+      //   break;
       default:
         routes = publicRoutes;
     }
