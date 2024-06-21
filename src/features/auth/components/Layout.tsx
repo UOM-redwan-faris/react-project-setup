@@ -9,15 +9,15 @@ export const Layout = ({ children }: LayoutProps) => {
     <>
       <div className="h-screen flex justify-end w-full">
         <div className="h-screen bg-color4 flex flex-col relative w-full">
-          {/* Logo at the top right with padding */}
-          <div className="absolute top-11 right-11 sm:hidden block">
+          <div className="w-full absolute sm:hidden right-0 flex justify-end p-10">
             <img
               className="w-32 h-32"
               src={require("../../../assets/Logo.png")}
               alt="Logo"
             />
           </div>
-          <div className="flex flex-col items-center justify-center h-full">
+
+          <div className="flex justify-center items-center flex-col h-full">
             {children}
           </div>
         </div>

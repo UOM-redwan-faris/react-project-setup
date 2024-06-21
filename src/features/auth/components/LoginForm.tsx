@@ -70,7 +70,7 @@ export const LoginForm = () => {
     event.preventDefault();
   };
   return (
-    <div className="w-full px-10 md:px-40">
+    <div className="w-full px-20 md:px-28 sm:px-20">
       <div className="w-full flex flex-col justify-end items-end">
         <div className="font-tajawal flex justify-end text-2xl py-5 text-color2 font-bold">
           تسجيل الدخول
