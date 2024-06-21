@@ -29,7 +29,7 @@ const NavBar = () => {
   const { checkAccess } = useAuthorization();
   const location = useLocation();
 
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const navigation: NavBarItem[] = [
     checkAccess({ allowedRoles: ["TEACHER"] }) && {
       name: "الصفحة الشخصية",
@@ -62,6 +62,11 @@ const NavBar = () => {
       icon: <FormatListNumberedRtlIcon style={{ fontSize: 24 }} />,
     },
   ].filter(Boolean) as NavBarItem[];
+
+  const handleLogout = () => {
+    logout();
+  };
+
   const navigate = useNavigate();
   const items: MenuItem[] = [
     {
@@ -90,7 +95,9 @@ const NavBar = () => {
         {
           key: "1-2",
           label: (
-            <div className="flex justify-center items-center w-full h-full text-lg text-color2 ">
+            <div
+              className="flex justify-center items-center w-full h-full text-lg text-color2 "
+              onClick={handleLogout}>
               تسجيل الخروج
             </div>
           ),
@@ -178,7 +185,10 @@ const MobileNavBar = () => {
   const { checkAccess } = useAuthorization();
   const location = useLocation();
 
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const handleLogout = () => {
+    logout();
+  };
   const navigation: NavBarItem[] = [
     checkAccess({ allowedRoles: ["TEACHER"] }) && {
       name: "الصفحة الشخصية",
@@ -239,7 +249,9 @@ const MobileNavBar = () => {
         {
           key: "1-2",
           label: (
-            <div className="flex justify-center items-center w-full h-full text-lg text-color2 ">
+            <div
+              className="flex justify-center items-center w-full h-full text-lg text-color2 "
+              onClick={handleLogout}>
               تسجيل الخروج
             </div>
           ),
