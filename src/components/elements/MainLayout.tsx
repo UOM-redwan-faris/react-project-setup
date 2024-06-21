@@ -98,7 +98,6 @@ const NavBar = () => {
       ],
     },
   ];
-
   return (
     <>
       <div className="h-screen flex flex-col justify-between">
@@ -212,86 +211,134 @@ const MobileNavBar = () => {
       icon: <FormatListNumberedRtlIcon style={{ fontSize: 24 }} />,
     },
   ].filter(Boolean) as NavBarItem[];
-
+  const navigate = useNavigate();
+  const items2: MenuItem[] = [
+    {
+      key: "sub1",
+      label: (
+        <div className="flex justify-start text-color2 text-sm font-tajawal items-center w-full h-full font-bold">
+          <div className="flex justify-center items-center text-sm font-tajawal pt-1 pr-3 h-12">
+            <SettingsIcon />
+          </div>
+          <div className="pr-6 flex justify-center items-center h-14 font-semibold text-base">
+            الاعدادات
+          </div>
+        </div>
+      ),
+      children: [
+        {
+          key: "1-1",
+          label: (
+            <div
+              className="flex justify-center items-center w-full h-full text-lg text-color2"
+              onClick={() => navigate("/")}>
+              الملف الشخصي
+            </div>
+          ),
+        },
+        {
+          key: "1-2",
+          label: (
+            <div className="flex justify-center items-center w-full h-full text-lg text-color2 ">
+              تسجيل الخروج
+            </div>
+          ),
+        },
+      ],
+    },
+  ];
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex items-center w-full justify-center pt-6">
-          <Link
-            to="/dashboard"
-            style={{
-              color: "inherit", // Inherit color from parent
-            }}>
-            <div className="flex items-center w-full justify-center cursor-pointer p-4">
-              <div className="flex items-center justify-center h-20 pr-4 text-color2 font-tajawal font-bold">
-                ثانوية نينوى للمتميزات
-              </div>
-              <div className="h-20 flex justify-center items-center">
-                <img
-                  className="w-16 h-auto my-3"
-                  src={require("../../assets/Logo.png")}
-                  alt=""
-                />
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="pt-4">
-          {navigation.map((item, index) => (
+        <div>
+          {" "}
+          <div className="flex items-center w-full justify-center pt-6">
             <Link
-              key={index}
-              to={item.to}
-              className=""
+              to="/dashboard"
               style={{
                 color: "inherit", // Inherit color from parent
               }}>
-              <div
-                className={`flex mt-2 w-full justify-center items-center font-tajawal font-semibold ${
-                  location.pathname === item.to ||
-                  location.pathname.includes(`${item.to}/`)
-                    ? "bg-color1-light text-color1"
-                    : "hover:bg-white text-color2"
-                }`}
-                style={{ position: "relative", minHeight: "50px" }}>
-                {location.pathname === item.to ||
-                location.pathname.includes(`${item.to}/`) ? (
-                  <div
-                    className="h-full w-2 bg-color1"
-                    style={{
-                      position: "absolute",
-                      right: "0",
-                      top: "0",
-                      bottom: "0",
-                      marginLeft: "10px",
-                    }}></div>
-                ) : (
-                  ""
-                )}
-                <div className="w-full flex justify-end pr-32">
-                  <div className="flex justify-center items-center font-tajawal pt-1 h-12">
-                    {item.name}
-                  </div>
-                  <div className="pl-6 flex justify-center items-center h-12">
-                    {item.icon}
-                  </div>
+              <div className="flex items-center w-full justify-center cursor-pointer p-4">
+                <div className="flex items-center justify-center h-20 pr-4 text-color2 font-tajawal font-bold">
+                  ثانوية نينوى للمتميزات
                 </div>
-                {location.pathname === item.to ||
-                location.pathname.includes(`${item.to}/`) ? (
-                  <div
-                    className="h-full w-2 bg-color1"
-                    style={{
-                      position: "absolute",
-                      right: "98%",
-                      top: "0",
-                      bottom: "0",
-                      marginLeft: "10px",
-                    }}></div>
-                ) : (
-                  ""
-                )}
+                <div className="h-20 flex justify-center items-center">
+                  <img
+                    className="w-16 h-auto my-3"
+                    src={require("../../assets/Logo.png")}
+                    alt=""
+                  />
+                </div>
               </div>
             </Link>
-          ))}
+          </div>
+          <div className="pt-4">
+            {navigation.map((item, index) => (
+              <Link
+                key={index}
+                to={item.to}
+                className=""
+                style={{
+                  color: "inherit", // Inherit color from parent
+                }}>
+                <div
+                  className={`flex mt-2 w-full justify-center items-center font-tajawal font-semibold ${
+                    location.pathname === item.to ||
+                    location.pathname.includes(`${item.to}/`)
+                      ? "bg-color1-light text-color1"
+                      : "hover:bg-white text-color2"
+                  }`}
+                  style={{ position: "relative", minHeight: "50px" }}>
+                  {location.pathname === item.to ||
+                  location.pathname.includes(`${item.to}/`) ? (
+                    <div
+                      className="h-full w-2 bg-color1"
+                      style={{
+                        position: "absolute",
+                        right: "0",
+                        top: "0",
+                        bottom: "0",
+                        marginLeft: "10px",
+                      }}></div>
+                  ) : (
+                    ""
+                  )}
+                  <div className="w-full flex justify-end pr-32">
+                    <div className="flex justify-center items-center font-tajawal pt-1 h-12">
+                      {item.name}
+                    </div>
+                    <div className="pl-6 flex justify-center items-center h-12">
+                      {item.icon}
+                    </div>
+                  </div>
+                  {location.pathname === item.to ||
+                  location.pathname.includes(`${item.to}/`) ? (
+                    <div
+                      className="h-full w-2 bg-color1"
+                      style={{
+                        position: "absolute",
+                        right: "98%",
+                        top: "0",
+                        bottom: "0",
+                        marginLeft: "10px",
+                      }}></div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="py-6 w-full flex justify-center">
+          <Menu
+            style={{ width: "100%" }}
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+            defaultOpenKeys={["sub1"]}
+            items={items2}
+            className="rtl-menu pr-24 rounded-none no-blue-selection"
+          />
         </div>
       </div>
     </>
@@ -304,8 +351,8 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
     const handleResize = () => {
       if (window.innerWidth >= 639) {
         setOpen(false);
-      } else {
         setCollapsed(false);
+      } else {
         setOpen(true);
       }
     };

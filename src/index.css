@@ -1,22 +1,17 @@
-/* src/tailwind.css */
+/* src/tailwind.css or your equivalent CSS file */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for RTL menu */
 .rtl-menu {
   @apply w-64 flex flex-col;
   direction: rtl;
 }
 
+/* Remove submenu arrow */
 .rtl-menu .ant-menu-submenu-arrow {
-  @apply absolute transform rotate-180;
-  left: 1rem; /* Adjust as necessary */
-}
-
-/* Adjust submenu arrow color */
-.rtl-menu .ant-menu-submenu-arrow {
-  @apply absolute transform rotate-180;
-  left: 1rem; /* Adjust position as necessary */
-  color: #262f68; /* Set arrow color */
+  display: none !important; /* Hide the arrow icon */
 }
 
 /* Remove blue outline and background color on selection */
@@ -49,6 +44,7 @@
   outline: none !important;
   box-shadow: none !important;
 }
+
 /* Gray background on hover */
 .ant-menu-item:hover {
   background-color: #e0e0e0 !important; /* Gray background color */
