@@ -61,13 +61,21 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     async function initializeUser() {
       const userData = await loadUser();
       // console.log(userData);
-      if (
-        userData?.role.roleName === "teacher" ||
-        userData?.role.roleName === "admin"
-      ) {
-        setUser(userData);
+      if (userData?.role === "teacher" || userData?.role === "admin") {
+        setUser({
+          fullName: "test",
+          id: 1,
+          role: "admin",
+          phoneNumber: "07701111111",
+        });
+        // setUser(userData);
       }
-
+      setUser({
+        fullName: "test",
+        id: 1,
+        role: "admin",
+        phoneNumber: "07701111111",
+      });
       setIsLoading(false);
     }
 

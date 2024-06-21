@@ -16,7 +16,7 @@ export const useAuthorization = () => {
 
   const checkAccess = React.useCallback(
     ({ allowedRoles }: { allowedRoles: RoleTypes[] }) => {
-      const userRole = user.role.roleName.toLowerCase();
+      const userRole = user.role.toLowerCase();
       const allowedRolesLowerCase = allowedRoles.map((role) =>
         role.toLowerCase()
       );

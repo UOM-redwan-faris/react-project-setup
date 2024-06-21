@@ -10,9 +10,9 @@ export const AppRoutes = () => {
   let routes: RouteObject[] = [];
 
   if (!isLoading) {
-    // console.log(user);
+    console.log(user);
 
-    switch (user?.role.roleName) {
+    switch (user?.role) {
       case "admin":
         routes = protectedAdminRoutes;
         break;
