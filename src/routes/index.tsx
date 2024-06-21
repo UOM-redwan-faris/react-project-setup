@@ -2,7 +2,10 @@ import { useRoutes, RouteObject } from "react-router-dom";
 import { Loading } from "../components/elements/loading";
 import { useAuth } from "../lib/auth";
 import { publicRoutes } from "./public";
-import { protectedAdminRoutes, protectedTeacherRoutes } from "./protected";
+import {
+  protectedUserRole1Routes,
+  protectedUserRole2Routes,
+} from "./protected";
 
 export const AppRoutes = () => {
   const { user, isLoading } = useAuth();
@@ -13,15 +16,15 @@ export const AppRoutes = () => {
     console.log(user);
 
     switch (user?.role) {
-      case "admin":
-        routes = protectedAdminRoutes;
+      case "userRole1":
+        routes = protectedUserRole1Routes;
         break;
-      case "teacher":
-        routes = protectedTeacherRoutes;
+      case "userRole2":
+        routes = protectedUserRole2Routes;
         break;
       default:
         routes = publicRoutes;
-    }
+    } // case for the router of the user base on the role
   }
   // console.log(routes);
 

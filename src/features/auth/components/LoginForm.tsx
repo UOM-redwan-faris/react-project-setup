@@ -2,27 +2,31 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Form, Button } from "antd";
+import { Form } from "antd";
 import { InputAdornment, IconButton } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 import { useAuth } from "../../../lib/auth";
 
-const RightAlignedTextField = styled(TextField)(({ theme }) => ({
-  // "& label": {
-  //   transformOrigin: "top right",
-  //   right: 0,
-  //   left: "auto",
-  //   textAlign: "right",
-  // },
-  // "& legend": {
-  //   textAlign: "right",
-  // },
-  // "& input": {
-  //   direction: "rtl", // Ensure text direction is right-to-left
-  // },
-}));
+const RightAlignedTextField = styled(TextField)(
+  ({
+    theme, // the theme should be here
+  }) => ({
+    // "& label": {
+    //   transformOrigin: "top right",
+    //   right: 0,
+    //   left: "auto",
+    //   textAlign: "right",
+    // },
+    // "& legend": {
+    //   textAlign: "right",
+    // },
+    // "& input": {
+    //   direction: "rtl", // Ensure text direction is right-to-left
+    // },
+  })
+);
 
 // Define the schema using Zod
 const schema = z.object({
@@ -70,9 +74,9 @@ export const LoginForm = () => {
     event.preventDefault();
   };
   return (
-    <div className="w-full px-20 md:px-28 sm:px-20">
+    <div className="">
       <div className="w-full flex flex-col justify-end items-end">
-        <div className="font-tajawal flex justify-end text-2xl py-5 text-color2 font-bold">
+        <div className="flex justify-end text-2xl py-5 font-bold">
           تسجيل الدخول
         </div>
       </div>
@@ -130,7 +134,7 @@ export const LoginForm = () => {
         <Form.Item className="text-right p-4">
           <button
             type="submit"
-            className="w-full text-lg p-2 bg-color2 hover:bg-color2 hover:bg-opacity-80 rounded-md">
+            className="w-full text-lg p-2 hover:bg-opacity-80 rounded-md">
             <div className="text-white">تسجيل الدخول</div>
           </button>
         </Form.Item>

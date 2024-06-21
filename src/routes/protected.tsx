@@ -12,51 +12,51 @@ const App = () => {
   );
 };
 
-export const protectedTeacherRoutes = [
+export const protectedUserRole1Routes = [
   {
-    path: "/profile",
+    path: "/page-1",
     element: <App />,
-    children: [{ path: "*", element: <div>الصفحة الشخصية</div> }],
+    children: [{ path: "*", element: <div>الصفحة 1</div> }],
   },
   {
     path: "*", // Redirect all other routes to the dashboard
-    element: <Navigate to="/profile" />,
+    element: <Navigate to="/page-1" />,
   },
 ];
 
-export const protectedAdminRoutes = [
+export const protectedUserRole2Routes = [
   {
-    path: "/teachers/*",
+    path: "/page-2/*",
     element: <App />,
-    children: [{ path: "*", element: <div>الصفحة الرئيسية</div> }],
+    children: [{ path: "*", element: <div>الصفحة 2</div> }],
   },
   {
-    path: "/attendance/*",
+    path: "/page-3/*",
     element: <App />,
-    children: [{ path: "*", element: <div>تقرير الحضور</div> }],
+    children: [{ path: "*", element: <div>الصفحة 3</div> }],
   },
   {
-    path: "/holidays-types/*",
+    path: "/page-4/*",
     element: <App />,
-    children: [{ path: "*", element: <div>انواع الاجازات</div> }],
+    children: [{ path: "*", element: <div>الصفحة 4</div> }],
   },
   {
-    path: "/holidays/*",
+    path: "/page-5/*",
     element: <App />,
-    children: [{ path: "*", element: <div>أيام العطل</div> }],
+    children: [{ path: "*", element: <div>الصفحة 5</div> }],
   },
   {
-    path: "/request-for-vacations/*",
+    path: "/page-6/*",
     element: <App />,
-    children: [{ path: "*", element: <div>طلب اجازات</div> }],
+    children: [{ path: "*", element: <div>الصفحة 6</div> }],
   },
   {
-    path: "/profile/*",
+    path: "/page-1/*",
     element: <App />,
-    children: [{ path: "*", element: <div>الصفحة الشخصية</div> }],
+    children: [{ path: "*", element: <div>الصفحة 1</div> }],
   },
   {
     path: "*", // Redirect all other routes to the dashboard
-    element: <Navigate to="/teachers" />,
+    element: <Navigate to="/page-2" />,
   },
 ];

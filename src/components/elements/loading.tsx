@@ -10,7 +10,7 @@ interface LoadingProps {
 
 export const Loading: React.FC<LoadingProps> = ({
   size = "80", // Default size set to 80
-  color = "#262F68", // Default color set to black
+  color = "#000000", // Default color set to black
 }) => {
   helix.register();
 
@@ -28,7 +28,7 @@ export const Loading: React.FC<LoadingProps> = ({
 
 export const SecondaryLoading: React.FC<LoadingProps> = ({
   size = "80", // Default size set to 80
-  color = "#262F68", // Default color set to black
+  color = "#000000", // Default color set to black
 }) => {
   hourglass.register();
 

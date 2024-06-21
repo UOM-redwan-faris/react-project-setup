@@ -2,8 +2,8 @@ import React from "react";
 import { useAuth } from "./auth";
 
 export enum ROLES {
-  TEACHER = "teacher",
-  ADMIN = "admin",
+  userRole1 = "userRole1",
+  userRole2 = "userRole2",
 }
 type RoleTypes = keyof typeof ROLES;
 
@@ -29,7 +29,7 @@ export const useAuthorization = () => {
     [user]
   );
 
-  return { checkAccess, role: user.role.roleName };
+  return { checkAccess, role: user.role };
 };
 
 type AuthorizationProps = {
